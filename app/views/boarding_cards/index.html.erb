@@ -1,17 +1,24 @@
-<h1>Listing boarding_cards</h1>
+<h1>Listing Boarding Cards</h1>
 
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>Form of Transport</th>
+      <th>Seat</th>
+      <th>Extra Info</th>
     </tr>
   </thead>
 
   <tbody>
     <% @boarding_cards.each do |boarding_card| %>
       <tr>
+        <td><%= boarding_card.origin %></td>
+        <td><%= boarding_card.destination %></td>
+        <td><%= boarding_card.form_of_transport %></td>
+        <td><%= boarding_card.seat %></td>
+        <td><%= boarding_card.extra_info %></td>
         <td><%= link_to 'Show', boarding_card %></td>
         <td><%= link_to 'Edit', edit_boarding_card_path(boarding_card) %></td>
         <td><%= link_to 'Destroy', boarding_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>

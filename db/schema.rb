@@ -26,41 +26,4 @@ ActiveRecord::Schema.define(version: 20131117191138) do
     t.datetime "updated_at"
   end
 
-  create_table "casts", force: true do |t|
-    t.string   "role"
-    t.integer  "person_id"
-    t.integer  "movie_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "casts", ["movie_id"], name: "index_casts_on_movie_id", using: :btree
-  add_index "casts", ["person_id"], name: "index_casts_on_person_id", using: :btree
-
-  create_table "comments", force: true do |t|
-    t.string   "author"
-    t.text     "body"
-    t.integer  "movie_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "comments", ["movie_id"], name: "index_comments_on_movie_id", using: :btree
-
-  create_table "movies", force: true do |t|
-    t.string   "title"
-    t.integer  "duration"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "synopsis"
-    t.integer  "year"
-  end
-
-  create_table "people", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end

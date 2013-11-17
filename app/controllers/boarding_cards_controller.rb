@@ -61,6 +61,9 @@ class BoardingCardsController < ApplicationController
     end
   end
 
+  def trip
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_boarding_card
@@ -69,6 +72,6 @@ class BoardingCardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def boarding_card_params
-      params[:boarding_card]
+      params.require(:boarding_card).permit(:origin, :destination, :form_of_transport, :seat, :extra_info)
     end
 end
