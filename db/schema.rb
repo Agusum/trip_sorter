@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131114151029) do
+ActiveRecord::Schema.define(version: 20131117191138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boarding_cards", force: true do |t|
+    t.string   "origin"
+    t.string   "destination"
+    t.string   "form_of_transport"
+    t.string   "seat"
+    t.text     "extra_info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "casts", force: true do |t|
     t.string   "role"

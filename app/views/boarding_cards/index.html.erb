@@ -1,0 +1,25 @@
+<h1>Listing boarding_cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boarding_cards.each do |boarding_card| %>
+      <tr>
+        <td><%= link_to 'Show', boarding_card %></td>
+        <td><%= link_to 'Edit', edit_boarding_card_path(boarding_card) %></td>
+        <td><%= link_to 'Destroy', boarding_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Boarding card', new_boarding_card_path %>
